@@ -1,0 +1,12 @@
+#!/bin/bash
+
+SPEEDTEST='~/.speedtest'
+
+DATE=$(date +%Y/%m/%d)
+TIME=$(date +%s)
+
+mkdir -p $SPEEDTEST/$DATE
+
+RESULTS=$(/usr/local/bin/speedtest -f json)
+
+echo $RESULTS > $SPEEDTEST/$DATE/$TIME.json
